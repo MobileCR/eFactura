@@ -14,10 +14,10 @@ if (!$db) {
 } else {
     echo "Opened database successfully\n";
 }
+$db->exec('INSERT INTO PRUEBA(NOMBRE) VALUES("Rigo es una loca :D ")');
 
-$sql = <<<EOF
-      SELECT * FROM prueba;
-EOF;
+$sql = 'SELECT * FROM prueba';
+
 
 $ret = $db->query($sql);
 while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
